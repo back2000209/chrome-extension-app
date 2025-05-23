@@ -11,7 +11,8 @@
   "author": "Jerome Wu <jeromewus@gmail.com>",
   "permissions": [
     "declarativeContent",
-    "activeTab"
+    "activeTab",
+    "scripting"
   ],
   "background": { "service_worker": "bg.js" },
   "action": {
