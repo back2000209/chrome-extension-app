@@ -17,7 +17,7 @@ const showPlayer = (data) => {
 
 const hidePlayer = () => {
   if (player !== null) {
-    palyer.remove();
+    player.remove();
   }
 }
 
@@ -49,3 +49,9 @@ const transcode = async (file) => {
   hideSpinner();
   showPlayer(data);
 }
+
+chrome.runtime.onMessage.addListener((msg) => {
+  if (msg.action === 'transcode') {
+    transcode(msg.url);
+  }
+});
